@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoCombineDe" table="`QUO_COMBINE_DE`">
+		<id name="Id" access="property" column="`TJD_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+    <property name="TjdAnalysis" type="String" column="`TJD_ANALYSIS`" length="255" />
+
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <many-to-one name="QuoCombine" class="QuoCombine" column="`TJL_ID`" not-null="false" fetch="select" />
+    <one-to-one name="QuoTermRelate" class="QuoTermRelate" property-ref="QuoCombineDe" cascade="none" />
+    
+	</class>
+</hibernate-mapping>

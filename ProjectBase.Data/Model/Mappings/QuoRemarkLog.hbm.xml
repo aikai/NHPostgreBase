@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoRemarkLog" table="`QUO_REMARK_LOG`">
+    
+		<id name="Id" access="property" column="`QUO_LOG`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<property name="Remark" type="String" column="`REMARK`" length="255" />
+    <property name="EditTime" type="DateTime" column="`EDIT_TIME`" length="7" />
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

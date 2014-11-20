@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimSourceWa" table="`LIM_SOURCE_WA`" schema="`public`">
+		<id name="Id" access="property" column="`SRC_ID`">
+      <generator class="guid.comb" />
+		</id>
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" />
+		<property name="SrcComment" type="String" column="`SRC_COMMENT`" length="500" />
+		<property name="SrcEname" type="String" column="`SRC_ENAME`" length="150" />
+		<property name="SrcTname" type="String" column="`SRC_TNAME`" length="150" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" />
+	</class>
+</hibernate-mapping>

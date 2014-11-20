@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimSamDetailWa" table="`LIM_SAM_DETAIL_WA`" schema="`public`">
+		<id name="Id" access="property" column="`SAD_ID`">
+      <generator class="guid.comb" />
+		</id>
+    
+		<!--<property name="CauId" type="Guid" column="`CAU_ID`" />-->
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" />
+		<property name="SadAnalyseDate" type="DateTime" column="`SAD_ANALYSE_DATE`" />
+		<property name="SadAnaNum" type="String" column="`SAD_ANA_NUM`" length="6" />
+		<property name="SadAnaNumyear" type="String" column="`SAD_ANA_NUMYEAR`" length="4" />
+		<property name="SadComment" type="String" column="`SAD_COMMENT`" length="255" />
+		<property name="SadCon" type="Boolean" column="`SAD_CON`" />
+		<property name="SadFormat" type="String" column="`SAD_FORMAT`" length="255" />
+		<property name="SadName" type="String" column="`SAD_NAME`" length="2000" />
+		<property name="SadSaveDate" type="DateTime" column="`SAD_SAVE_DATE`" />
+		<property name="SadSaveTime" type="String" column="`SAD_SAVE_TIME`" length="5" />
+		<property name="SadStatus" type="Boolean" column="`SAD_STATUS`" />
+		<property name="SamItem" type="Int32" column="`SAM_ITEM`" />
+		<!--<property name="SrcId" type="Guid" column="`SRC_ID`" />-->
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" />
+    
+		<set name="LimSamSubdetailWas" inverse="true">
+			<key column="`SAD_ID`" />
+			<one-to-many class="LimSamSubdetailWa" />
+		</set>
+    
+    <one-to-one name="LimGen" class="LimGen" property-ref="LimSamDetailWa" cascade="all" />
+    
+    <many-to-one name="LimCaution" class="LimCaution" column="`CAU_ID`" not-null="false" fetch="select" />
+    <many-to-one name="LimSourceWa" class="LimSourceWa" column="`SRC_ID`" not-null="false" fetch="select" />
+    <many-to-one name="LimSamMasterWa" class="LimSamMasterWa" column="`SAM_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

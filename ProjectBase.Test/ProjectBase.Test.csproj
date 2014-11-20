@@ -38,7 +38,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\references\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Spring.Core, Version=1.3.1.40711, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\references\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\references\Spring.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -196,6 +206,7 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
+    <Content Include="LimGenTest.aspx" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -232,6 +243,11 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Globals.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Globals.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -293,6 +309,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LimGenTest.aspx.cs">
+      <DependentUpon>LimGenTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LimGenTest.aspx.designer.cs">
+      <DependentUpon>LimGenTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -316,6 +339,30 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectBase.Core\ProjectBase.Core.csproj">
+      <Project>{97c50a41-04a0-4424-bda6-5aa630cffd11}</Project>
+      <Name>ProjectBase.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBase.Data\ProjectBase.Data.csproj">
+      <Project>{5587c9b1-6608-4f2a-8e76-2a12b15afbc7}</Project>
+      <Name>ProjectBase.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBase.Utils\ProjectBase.Utils.csproj">
+      <Project>{1f911ba2-a429-403c-b989-6af1188c427d}</Project>
+      <Name>ProjectBase.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBase.Web\ProjectBase.Web.csproj">
+      <Project>{91870421-b465-48ad-8eef-1e5ce57b39cb}</Project>
+      <Name>ProjectBase.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Globals.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Globals.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

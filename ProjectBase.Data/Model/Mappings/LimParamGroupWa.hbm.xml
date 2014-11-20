@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimParamGroupWa" table="`LIM_PARAM_GROUP_WA`" schema="`public`">
+		<id name="Id" access="property" column="`PRG_ID`">
+      <generator class="guid.comb" />
+		</id>
+		<property name="PrgEcomment" type="String" column="`PRG_ECOMMENT`" length="255" />
+		<property name="PrgEname" type="String" column="`PRG_ENAME`" length="255" />
+		<property name="PrgTcomment" type="String" column="`PRG_TCOMMENT`" length="255" />
+		<property name="PrgTname" type="String" column="`PRG_TNAME`" length="255" />
+	</class>
+</hibernate-mapping>

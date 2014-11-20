@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimSamplingLocate" table="`LIM_SAMPLING_LOCATE`" schema="`public`">
+		<id name="Id" access="property" column="`SAP_ID`">
+      <generator class="guid.comb" />
+		</id>
+		<property name="SapEname" type="String" column="`SAP_ENAME`" length="255" />
+		<property name="SapTname" type="String" column="`SAP_TNAME`" length="255" />
+	</class>
+</hibernate-mapping>

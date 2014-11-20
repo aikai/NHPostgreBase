@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusCon" table="`CUS_CON`">
+		<id name="Id" access="property" column="`CON_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="ConComment" type="String" column="`CON_COMMENT`" length="250" />
+		<property name="ConEmail" type="String" column="`CON_EMAIL`" length="60" />
+		<property name="ConFax" type="String" column="`CON_FAX`" length="50" />
+		<property name="ConMobile" type="String" column="`CON_MOBILE`" length="50" />
+		<property name="ConName" type="String" column="`CON_NAME`" length="100" />
+		<property name="ConNickname" type="String" column="`CON_NICKNAME`" length="20" />
+		<property name="ConPosition" type="String" column="`CON_POSITION`" length="150" />
+		<property name="ContDep" type="String" column="`CONT_DEP`" length="100" />
+		<property name="ConTel" type="String" column="`CON_TEL`" length="50" />
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+		<many-to-one name="CusMaster" class="CusMaster" column="`CUS_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

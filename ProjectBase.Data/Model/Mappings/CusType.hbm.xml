@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusType" table="`CUS_TYPE`">
+		<id name="Id" access="property" column="`CTP_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="CtpComment" type="String" column="`CTP_COMMENT`" length="250" />
+		<property name="CtpEname" type="String" column="`CTP_ENAME`" length="150" />
+		<property name="CtpTname" type="String" column="`CTP_TNAME`" length="150" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+		<set name="CusMasters" inverse="true" cascade="all">
+			<key column="`CTP_ID`" />
+			<one-to-many class="CusMaster" />
+		</set>
+	</class>
+</hibernate-mapping>

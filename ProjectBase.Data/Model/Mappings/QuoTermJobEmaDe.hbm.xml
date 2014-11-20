@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoTermJobEmaDe" table="`QUO_TERM_JOBEDE`">
+		<id name="Id" access="property" column="`TJDE_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+    <property name="TjdeAnalysis" type="String" column="`TJDE_ANALYSIS`" length="255" />
+
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <set name="QuoTermJobEmaFiles" inverse="true" cascade="all">
+      <key column="`TJDE_ID`" />
+      <one-to-many class="QuoTermJobEmaFile" />
+    </set>
+    
+    <many-to-one name="QuoTermJobEma" class="QuoTermJobEma" column="`TJE_ID`" not-null="false" fetch="select" />
+    
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AppRoleInMenu" table="`APP_ROLE_INMENU`">
+		<id name="Id" access="property" column="`ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<!--<property name="MenuId" type="BinaryBlob" column="`MENU_ID`" length="16" />
+		<property name="RoleId" type="BinaryBlob" column="`ROLE_ID`" length="16" />-->
+    <many-to-one name="AppMenu" class="AppMenu" column="`MENU_ID`" not-null="true" fetch="select" />
+    <many-to-one name="AppRole" class="AppRole" column="`ROLE_ID`" not-null="true" fetch="select" />
+	</class>
+</hibernate-mapping>

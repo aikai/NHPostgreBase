@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusDue" table="`CUS_DUE`">
+		<id name="Id" access="property" column="`DUE_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="DueRemark" type="String" column="`DUE_REMARK`" length="500" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <many-to-one name="CusMaster" class="CusMaster" column="`CUS_ID`" not-null="false" fetch="select" />
+    <many-to-one name="CusDueType" class="CusDueType" column="`DTY_ID`" not-null="false" fetch="select" />
+
+  </class>
+</hibernate-mapping>

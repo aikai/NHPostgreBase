@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Amphoe" table="`AMPHOE`">
+		<id name="Id" access="property" column="`AMP_ID`" length="4">
+			<generator class="assigned" />
+		</id>
+		<property name="AmpEname" type="String" column="`AMP_ENAME`" length="100" />
+		<property name="AmpTname" type="String" column="`AMP_TNAME`" length="100" />
+		<set name="Tambols" inverse="true" cascade="all">
+			<key column="`AMP_ID`" />
+			<one-to-many class="Tambol" />
+		</set>
+    <many-to-one name="Province" class="Province" column="`PROV_ID`" not-null="true" fetch="select" />
+	</class>
+</hibernate-mapping>

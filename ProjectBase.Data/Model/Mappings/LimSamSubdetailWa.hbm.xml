@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimSamSubdetailWa" table="`LIM_SAM_SUBDETAIL_WA`" schema="`public`">
+		<id name="Id" access="property" column="`SAS_ID`">
+      <generator class="guid.comb" />
+		</id>
+		<property name="SasAsetic1" type="String" column="`SAS_ASETIC1`" length="100" />
+		<property name="SasAsetic250" type="String" column="`SAS_ASETIC250`" length="100" />
+		<property name="SasAsetic500" type="String" column="`SAS_ASETIC500`" length="100" />
+		<property name="SasContainer" type="String" column="`SAS_CONTAINER`" length="100" />
+		<property name="SasFosface" type="String" column="`SAS_FOSFACE`" length="100" />
+		<property name="SasGlass1" type="String" column="`SAS_GLASS1`" length="100" />
+		<property name="SasGlass250" type="String" column="`SAS_GLASS250`" length="100" />
+		<property name="SasGlass425" type="String" column="`SAS_GLASS425`" length="100" />
+		<property name="SasItem" type="Int32" column="`SAS_ITEM`" />
+		<property name="SasSterite" type="String" column="`SAS_STERITE`" length="100" />
+		<many-to-one name="LimSamDetailWa" class="LimSamDetailWa" column="`SAD_ID`" not-null="false" fetch="select" />
+		<many-to-one name="LimSamPreserv" class="LimSamPreserv" column="`SPS_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

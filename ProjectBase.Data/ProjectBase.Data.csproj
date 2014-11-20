@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5587C9B1-6608-4F2A-8E76-2A12B15AFBC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectBase.Data</RootNamespace>
+    <AssemblyName>ProjectBase.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\References\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator">
+      <HintPath>..\packages\References\NHibernate.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\packages\Npgsql-2.2.0-beta1-net35\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\AmphoeDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\AppControlDao.cs" />
+    <Compile Include="Dao\AppMenuDao.cs" />
+    <Compile Include="Dao\AppPermitDao.cs" />
+    <Compile Include="Dao\AppProjectDao.cs" />
+    <Compile Include="Dao\AppRoleDao.cs" />
+    <Compile Include="Dao\AppRoleInMenuDao.cs" />
+    <Compile Include="Dao\LimGenDao.cs" />
+    <Compile Include="Dao\LimSamplingLocateDao.cs" />
+    <Compile Include="Dao\QuoTermInvDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\QuoWorkerDao.cs" />
+    <Compile Include="Dao\QuoTermRelateDao.cs" />
+    <Compile Include="Dao\QuoCombineDao.cs" />
+    <Compile Include="Dao\QuoCombineDeDao.cs" />
+    <Compile Include="Dao\QuoCombineFileDao.cs" />
+    <Compile Include="Dao\LimSourceWaDao.cs" />
+    <Compile Include="Dao\LimSamSubdetailWaDao.cs" />
+    <Compile Include="Dao\LimSamPreservDao.cs" />
+    <Compile Include="Dao\LimSamMasterWaDao.cs" />
+    <Compile Include="Dao\LimSamDetailWaDao.cs" />
+    <Compile Include="Dao\LimParamWaDao.cs" />
+    <Compile Include="Dao\LimParamGroupWaDao.cs" />
+    <Compile Include="Dao\LimCautionDao.cs" />
+    <Compile Include="Dao\QuoTermJobEmaFilesDao.cs" />
+    <Compile Include="Dao\QuoRetentionDao.cs" />
+    <Compile Include="Dao\QuoCoWorkerDao.cs" />
+    <Compile Include="Dao\QuoTermJobEsmFileDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\QuoTermJobLabFileDao.cs" />
+    <Compile Include="Dao\QuoTermJobEmaFileDao.cs" />
+    <Compile Include="Dao\QuoTermJobEmaDeDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\QuoTermJobEmaDao.cs" />
+    <Compile Include="Dao\QuoTermStaDao.cs" />
+    <Compile Include="Dao\QuoTypeStaDao.cs" />
+    <Compile Include="Dao\QuoTermJobLabDeDao.cs" />
+    <Compile Include="Dao\QuoTermJobLabDao.cs" />
+    <Compile Include="Dao\QuoRequestDao.cs" />
+    <Compile Include="Dao\QuoReceiveDao.cs" />
+    <Compile Include="Dao\QuoPoCodeDao.cs" />
+    <Compile Include="Dao\HrmEmailDao.cs" />
+    <Compile Include="Dao\QuoRemarkLogDao.cs" />
+    <Compile Include="Dao\QuoTermpaymentDao.cs" />
+    <Compile Include="Dao\QuoTermpaymentDepDao.cs" />
+    <Compile Include="Dao\QuoInCusConDao.cs" />
+    <Compile Include="Dao\QuoFileDao.cs" />
+    <Compile Include="Dao\HrmPositionDao.cs" />
+    <Compile Include="Dao\HrmSignDao.cs" />
+    <Compile Include="Dao\UnitDao.cs" />
+    <Compile Include="Dao\CusDueTypeDao.cs" />
+    <Compile Include="Dao\CusAddtypeDao.cs" />
+    <Compile Include="Dao\QuoTermdepDao.cs" />
+    <Compile Include="Dao\QuoApproveDao.cs" />
+    <Compile Include="Dao\CusDueDao.cs" />
+    <Compile Include="Dao\UaeProjectManageDao.cs" />
+    <Compile Include="Dao\QuoMasterDao.cs" />
+    <Compile Include="Dao\QuoGenDao.cs" />
+    <Compile Include="Dao\QuoDetailDao.cs" />
+    <Compile Include="Dao\DepartmentDao.cs" />
+    <Compile Include="Dao\CusBustypeDao.cs" />
+    <Compile Include="Dao\CusConDao.cs" />
+    <Compile Include="Dao\CusMasterDao.cs" />
+    <Compile Include="Dao\CusTypeDao.cs" />
+    <Compile Include="Dao\HrmEmployeeDao.cs" />
+    <Compile Include="Dao\CusAddDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\CusBusgroupDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\ProvinceDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\TambolDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories\DaoFactory.cs" />
+    <Compile Include="Factories\EntityFactory.cs" />
+    <Compile Include="Model\Components\Address.cs" />
+    <Compile Include="Model\Components\AddressShort.cs" />
+    <Compile Include="Model\Entities\Amphoe.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\AppControl.cs" />
+    <Compile Include="Model\Entities\AppMenu.cs" />
+    <Compile Include="Model\Entities\AppPermit.cs" />
+    <Compile Include="Model\Entities\AppProject.cs" />
+    <Compile Include="Model\Entities\AppRole.cs" />
+    <Compile Include="Model\Entities\AppRoleInMenu.cs" />
+    <Compile Include="Model\Entities\AppControlDetail.cs" />
+    <Compile Include="Model\Entities\QuoTermInv.cs" />
+    <Compile Include="Model\Entities\LimGen.cs" />
+    <Compile Include="Model\Entities\LimSamplingLocate.cs" />
+    <Compile Include="Model\Entities\QuoTermRelate.cs" />
+    <Compile Include="Model\Entities\QuoCombine.cs" />
+    <Compile Include="Model\Entities\QuoCombineDe.cs" />
+    <Compile Include="Model\Entities\QuoCombineFile.cs" />
+    <Compile Include="Model\Entities\LimCaution.cs" />
+    <Compile Include="Model\Entities\LimParamGroupWa.cs" />
+    <Compile Include="Model\Entities\LimParamWa.cs" />
+    <Compile Include="Model\Entities\LimSamDetailWa.cs" />
+    <Compile Include="Model\Entities\LimSamMasterWa.cs" />
+    <Compile Include="Model\Entities\LimSamPreserv.cs" />
+    <Compile Include="Model\Entities\LimSamSubdetailWa.cs" />
+    <Compile Include="Model\Entities\LimSourceWa.cs" />
+    <Compile Include="Model\Entities\QuoTermJobEmaFiles.cs" />
+    <Compile Include="Model\Entities\QuoRetention.cs" />
+    <Compile Include="Model\Entities\QuoCoWorker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\QuoTermJobEsmFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\QuoTermJobLabFile.cs" />
+    <Compile Include="Model\Entities\QuoTermJobEmaFile.cs" />
+    <Compile Include="Model\Entities\QuoTermJobEmaDe.cs" />
+    <Compile Include="Model\Entities\QuoTermJobEma.cs" />
+    <Compile Include="Model\Entities\QuoTermSta.cs" />
+    <Compile Include="Model\Entities\QuoTypeSta.cs" />
+    <Compile Include="Model\Entities\QuoTermJobLabDe.cs" />
+    <Compile Include="Model\Entities\QuoTermJobLab.cs" />
+    <Compile Include="Model\Entities\QuoRequest.cs" />
+    <Compile Include="Model\Entities\QuoReceive.cs" />
+    <Compile Include="Model\Entities\QuoPoCode.cs" />
+    <Compile Include="Model\Entities\HrmEmail.cs" />
+    <Compile Include="Model\Entities\QuoRemarkLog.cs" />
+    <Compile Include="Model\Entities\QuoTermpaymentDep.cs" />
+    <Compile Include="Model\Entities\QuoTermpayment.cs" />
+    <Compile Include="Model\Entities\QuoInCusCon.cs" />
+    <Compile Include="Model\Entities\HrmPosition.cs" />
+    <Compile Include="Model\Entities\HrmSign.cs" />
+    <Compile Include="Model\Entities\QuoFile.cs" />
+    <Compile Include="Model\Entities\CusAdd.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\CusAddtype.cs" />
+    <Compile Include="Model\Entities\CusBusgroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\CusBustype.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\CusCon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\CusDue.cs" />
+    <Compile Include="Model\Entities\CusDueType.cs" />
+    <Compile Include="Model\Entities\CusMaster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\CusType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\Department.cs" />
+    <Compile Include="Model\Entities\HrmEmployee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\Province.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\QuoApprove.cs" />
+    <Compile Include="Model\Entities\QuoDetail.cs" />
+    <Compile Include="Model\Entities\QuoGen.cs" />
+    <Compile Include="Model\Entities\QuoMaster.cs" />
+    <Compile Include="Model\Entities\QuoTermdep.cs" />
+    <Compile Include="Model\Entities\QuoWorker.cs" />
+    <Compile Include="Model\Entities\Tambol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\UaeProjectManage.cs" />
+    <Compile Include="Model\Entities\Unit.cs" />
+    <Compile Include="Model\Validation.cs" />
+    <Compile Include="NHibernateDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEsmFile.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEsmFile.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobLab.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobLab.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobLabDe.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobLabDe.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEmaFile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEmaFile.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobLabFile.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobLabFile.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCoWorker.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCoWorker.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoRetention.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoRetention.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimCaution.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimCaution.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimParamGroupWa.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimParamGroupWa.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimParamWa.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimParamWa.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamDetailWa.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\LimSamDetailWa.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamMasterWa.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamMasterWa.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamPreserv.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamPreserv.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamSubdetailWa.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamSubdetailWa.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSourceWa.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSourceWa.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEmaFiles.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEmaFiles.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCombine.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCombine.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCombineDe.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCombineDe.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCombineFile.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoCombineFile.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermRelate.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermRelate.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoWorker.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoWorker.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamplingLocate.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimSamplingLocate.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\LimGen.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\LimGen.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermInv.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermInv.nhv.xml" />
+    <Content Include="nhvalidator.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectBase.Core\ProjectBase.Core.csproj">
+      <Project>{97C50A41-04A0-4424-BDA6-5AA630CFFD11}</Project>
+      <Name>ProjectBase.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectBase.Utils\ProjectBase.Utils.csproj">
+      <Project>{1F911BA2-A429-403C-B989-6AF1188C427D}</Project>
+      <Name>ProjectBase.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\Mappings\Amphoe.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\Amphoe.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppControl.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppControl.nhv.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\AppControlDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\AppControlDetail.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppMenu.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\AppMenu.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppPermit.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\AppPermit.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppProject.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppProject.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppRole.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppRole.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\AppRoleInmenu.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\AppRoleInmenu.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusAdd.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusAdd.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusAddtype.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusAddtype.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusBusgroup.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusBusgroup.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusBustype.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusBustype.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusCon.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusCon.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusDue.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusDue.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusDueType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusDueType.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusMaster.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\CusMaster.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusType.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\CusType.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\Department.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\Department.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\HrmEmail.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\HrmEmail.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\HrmEmployee.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\HrmEmployee.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\HrmPosition.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\HrmPosition.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\HrmSign.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\HrmSign.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\Province.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\Province.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoApprove.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoApprove.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoDetail.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoFile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoFile.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoGen.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoGen.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoInCusCon.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoInCusCon.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoMaster.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoMaster.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoPoCode.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoPoCode.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoReceive.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoReceive.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoRemarkLog.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoRemarkLog.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoRequest.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoRequest.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermdep.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermdep.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEma.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEma.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEmaDe.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermJobEmaDe.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermpayment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoTermpayment.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermpaymentDep.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\QuoTermpaymentDep.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermSta.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTermSta.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTypeSta.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\QuoTypeSta.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\Tambol.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\Tambol.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\UaeProjectManage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\UaeProjectManage.nhv.xml" />
+    <EmbeddedResource Include="Model\Mappings\Unit.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Mappings\Unit.nhv.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

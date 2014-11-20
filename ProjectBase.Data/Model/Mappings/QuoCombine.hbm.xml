@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoCombine" table="`QUO_COMBINE`">
+		<id name="Id" access="property" column="`TJL_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<property name="TjlRepnum" type="String" column="`TJL_REPNUM`" length="100" />
+		<property name="TjlDescription" type="String" column="`TJL_DESCRIPTION`" length="255" />
+    <property name="Year" type="Int32" column="`Year`" length="22" />
+    
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <set name="QuoCombineDes" inverse="true" cascade="all">
+      <key column="`TJL_ID`" />
+      <one-to-many class="QuoCombineDe" />
+    </set>
+
+    <set name="QuoCombineFiles" inverse="true" cascade="all">
+      <key column="`TJL_ID`" />
+      <one-to-many class="QuoCombineFile" />
+    </set>
+  
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+  
+	</class>
+</hibernate-mapping>

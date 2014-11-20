@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="HrmPosition" table="`HRM_POSITION`">
+		<id name="Id" access="property" column="`PS_ID`" length="16">
+      <generator class="assigned" />
+		</id>
+		
+    <property name="PsTname" type="String" column="`PS_TNAME`" length="100" />
+    <property name="PsEname" type="String" column="`PS_ENAME`" length="100" />
+    <property name="PsComment" type="String" column="`PS_COMMENT`" length="150" />
+    <property name="PsMn" type="String" column="`PS_MN`" length="30" />
+    <property name="PsIden" type="String" column="`PS_IDEN`" length="1" />
+
+	</class>
+</hibernate-mapping>

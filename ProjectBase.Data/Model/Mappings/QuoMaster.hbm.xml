@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoMaster" table="`QUO_MASTER`">
+    
+		<id name="Id" access="property" column="`QUO_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+    <property name="QuoComment" type="String" column="`QUO_COMMENT`" length="500" />
+    <property name="QuoCost" type="Double" column="`QUO_COST`" length="22" />
+    <property name="QuoDate" type="DateTime" column="`QUO_DATE`" length="7" />
+    <property name="QuoDisconut" type="String" column="`QUO_DISCONUT`" length="100" />
+    <property name="QuoDisconutNum" type="Double" column="`QUO_DISCONUT_NUM`" length="22" />
+    <property name="QuoJobend" type="DateTime" column="`QUO_JOBEND`" length="7" />
+    <property name="QuoJobstart" type="DateTime" column="`QUO_JOBSTART`" length="7" />
+    <property name="QuoPeriod" type="String" column="`QUO_PERIOD`" length="50" />
+    <property name="QuoPocode" type="String" column="`QUO_POCODE`" length="25" />
+    <property name="QuoPodate" type="DateTime" column="`QUO_PODATE`" length="7" />
+    <property name="QuoScope" type="String" column="`QUO_SCOPE`" length="250" />
+    <property name="QuoTerm" type="String" column="`QUO_TERM`" length="50" />
+    <property name="QuoTotal" type="Double" column="`QUO_TOTAL`" length="22" />
+    <property name="QuoVat" type="Double" column="`QUO_VAT`" length="22" />
+    <property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+    <property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+    <property name="LangStatus" type="System.Boolean" column="`LANG_STATUS`" length="1" />
+    <property name="QuoDiscountFlag" type="System.Boolean" column="`QUO_DISCOUNT_FLAG`"  length="1" />
+    <property name="QuoNetAmount" type="Double" column="`QUO_NETAMOUNT`"  length="22" />
+    <property name="QuoEmploy" type="System.Boolean" column="`QUO_EMPLOY`"  length="1" />
+    <property name="QuoTermFlag" type="System.Boolean" column="`QUO_TERM_FLAG`" length="1" />
+    <property name="QuoCustomerMailFlag" type="System.Boolean" column="`QUO_CUSTOMER_MAIL_FLAG`" length="1" />
+    <property name="QuoCoworkerMailFlag" type="System.Boolean" column="`QUO_COWORKER_MAIL_FLAG`" length="1" />
+    <property name="RequestFlag" type="System.Boolean" column="`REQUEST_FLAG`" length="1" />
+    <property name="MoneyFlag" type="String" column="`MONEY_FLAG`" length="5" />
+
+    <set name="QuoDetails" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoDetail" />
+    </set>    
+    <set name="QuoGens" inverse="true" cascade="none">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoGen" />
+    </set>
+    <set name="QuoFiles" inverse="true" cascade="none">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoFile" />
+    </set>
+    <set name="QuoInCusCons" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoInCusCon" />
+    </set>
+    <set name="QuoTermdeps" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoTermdep" />
+    </set>
+    <set name="QuoTermpayments" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoTermpayment" />
+    </set>
+    <set name="QuoRemarkLogs" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoRemarkLog" />
+    </set>
+    <set name="QuoPoCodes" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoPoCode" />
+    </set>
+    <set name="QuoRequests" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoRequest" />
+    </set>
+    <set name="QuoRetentions" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoRetention" />
+    </set>
+    
+    <many-to-one name="CusMaster" class="CusMaster" column="`CUS_ID`" not-null="false" fetch="select" />
+
+    <one-to-one name="QuoReceive" class="QuoReceive" property-ref="QuoMaster" cascade="all" />
+    
+    <property name="ProjectFlag" type="System.Boolean" column="`PROJ_FLAG`" length="1" />
+    
+    <set name="QuoCoWorks" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoCoWorker" />
+    </set>
+
+    <set name="QuoWorkers" inverse="true" cascade="all">
+      <key column="`QUO_ID`" />
+      <one-to-many class="QuoWorker" />
+    </set>
+
+    <many-to-one name="ProjManage" class="UaeProjectManage" column="`PROJ_ID`" not-null="false" fetch="select" />
+    
+  </class>
+</hibernate-mapping>

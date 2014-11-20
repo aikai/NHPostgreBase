@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AppControl" table="`APP_CONTROL`">
+		<id name="Id" access="property" column="`CONTROL_ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+
+    <many-to-one name="HrmEmployee" class="HrmEmployee" column="`EMP_ID`" not-null="true" fetch="select" />
+    <!--<many-to-one name="AppPermit" class="AppPermit" column="`PERMISSION`" not-null="true" fetch="select" />-->
+    <!--<many-to-one name="apControlDetail" class="AppControlDetail" column="`CTDETAIL_ID`" not-null="true" fetch="select" />-->
+    <set name="apControlDetail" inverse="true" cascade="all">
+      <key column="`CONTROL_ID`" />
+      <one-to-many class="AppControlDetail" />
+    </set>
+    <many-to-one name="AppRole" class="AppRole" column="`ROLE_ID`" not-null="true" fetch="select" />
+	</class>
+</hibernate-mapping>

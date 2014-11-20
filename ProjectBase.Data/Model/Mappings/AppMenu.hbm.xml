@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AppMenu" table="`APP_MENU`">
+		<id name="Id" access="property" column="`MENU_ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+
+    <property name="EnglishName" type="String" column="`MENU_ENG`" length="100" />
+    <property name="ThaiName" type="String" column="`MENU_THAI`" length="100" />
+    <property name="Url" type="String" column="`MENU_URL`" length="100" />
+    <property name="Index" type="Int32" column="`MENU_INDX`" length="22" />
+    
+    <set name="AppMenus" inverse="true">
+      <key column="`PARENT_ID`" />
+      <one-to-many class="AppMenu" />
+    </set>
+    
+    <many-to-one name="Parent" class="AppMenu" column="`PARENT_ID`" not-null="false" fetch="select" />
+    
+	</class>
+</hibernate-mapping>

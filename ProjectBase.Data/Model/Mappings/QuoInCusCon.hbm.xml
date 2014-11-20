@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoInCusCon" table="`QUO_IN_CUSCON`">
+		<id name="Id" access="property" column="`ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+    <many-to-one name="CusCon" class="CusCon" column="`CON_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

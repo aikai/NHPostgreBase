@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AppControlDetail" table="`APP_CONTROL_DETAIL`">
+		<id name="Id" access="property" column="`CTDETAIL_ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+    
+    <many-to-one name="AppControl" class="AppControl" column="`CONTROL_ID`" not-null="false" fetch="select" />    
+    <many-to-one name="AppPermit" class="AppPermit" column="`PERMIT_ID`" not-null="true" fetch="select" />    
+	</class>
+</hibernate-mapping>

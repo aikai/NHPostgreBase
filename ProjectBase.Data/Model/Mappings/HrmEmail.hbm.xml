@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="HrmEmail" table="`HRM_EMAIL`">
+    <id name="Id" access="property" column="`EMP_ID`" length="10">
+      <generator class="assigned" />
+    </id>
+    <property name="Email" type="String" column="`EMAIL_ACCOUNT`" length="50" />
+    <property name="EmailPass" type="String" column="`EMAIL_PASSWORD`" length="50" />
+    <property name="Active" type="System.Boolean" column="`EMAIL_ACTIVE`" length="1" />
+  </class>
+</hibernate-mapping>

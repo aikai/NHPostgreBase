@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimGen" table="`LIM_GEN`" schema="`public`">
+		<id name="Id" access="property" column="`GEN_ID`">
+      <generator class="guid.comb" />
+		</id>
+    
+    <property name="GenNo" type="String" column="`GEN_NO`" length="50" />
+		<property name="GenDep" type="String" column="`GEN_DEP`" length="50" />
+    <property name="Suffix" type="String" column="`SUFFIX`" length="10" />
+    <property name="UniqueKey" type="String" column="`UNIQUE_KEY`" length="50" />
+    <property name="GenCode" type="Int32" column="`GEN_CODE`" length="22" />
+    <property name="GenYear" type="Int32" column="`GEN_YEAR`" length="22" />
+    <property name="GenDate" type="DateTime" column="`GEN_DATE`" />
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" />
+    <property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+    <property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" />
+    
+    <many-to-one name="LimSamDetailWa" class="LimSamDetailWa" column="`SAD_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

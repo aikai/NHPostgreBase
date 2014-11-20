@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusAdd" table="`CUS_ADD`">
+		<id name="Id" access="property" column="`ADDR_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+    <!--<property name="AddrEaddress" type="String" column="`ADDR_EADDRESS`" length="150" />-->
+    <property name="AddrEmail" type="String" column="`ADDR_EMAIL`" length="100" />
+    <property name="AddrEname" type="String" column="`ADDR_ENAME`" length="150" />
+    <property name="AddrEroad" type="String" column="`ADDR_EROAD`" length="60" />
+    <property name="AddrFax" type="String" column="`ADDR_FAX`" length="50" />
+    <!--<property name="AddrTaddress" type="String" column="`ADDR_TADDRESS`" length="150" />-->
+    <property name="AddrTel" type="String" column="`ADDR_TEL`" length="50" />
+    <property name="AddrTname" type="String" column="`ADDR_TNAME`" length="150" />
+    <property name="AddrTroad" type="String" column="`ADDR_TROAD`" length="60" />
+    <property name="AddrWww" type="String" column="`ADDR_WWW`" length="100" />
+    <!--<property name="AddrZipcode" type="String" column="`ADDR_ZIPCODE`" length="5" />-->
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+    <property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+    <property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+    
+    <many-to-one name="CusMaster" class="CusMaster" column="`CUS_ID`" not-null="false" fetch="select" />
+    <!--<many-to-one name="Tambol" class="Tambol" column="`TAM_ID`" not-null="false" fetch="select" />
+    <many-to-one name="Amphoe" class="Amphoe" column="`AMP_ID`" not-null="false" fetch="select" />
+    <many-to-one name="Province" class="Province" column="`PROV_ID`" not-null="false" fetch="select" />-->
+    <many-to-one name="CusAddtype" class="CusAddtype" column="`CAD_ID`" not-null="false" fetch="select" />
+
+
+    <component name="AddressShort" class="ProjectBase.Data.Model.AddressShort" >
+      <property name="ThaiAddress" type="String" column="`ADDR_TADDRESS`" length="150" />
+      <property name="EngAddress" type="String" column="`ADDR_EADDRESS`" length="150" />
+
+      <many-to-one name="Tambol" class="Tambol" column="`TAM_ID`" not-null="false" fetch="select" />
+      <many-to-one name="Amphoe" class="Amphoe" column="`AMP_ID`" not-null="false" fetch="select" />
+      <many-to-one name="Province" class="Province" column="`PROV_ID`" not-null="false"  fetch="select"/>
+
+      <!--<property name="CusZipcode" type="String" column="`CUS_ZIPCODE`" length="5" />-->
+      <component name="PostCode" class="ProjectBase.Utils.Components.PostCode, ProjectBase.Utils" >
+        <property name="Value" column="`ADDR_ZIPCODE`" type="string" />
+      </component>
+    </component>
+    
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoTermpaymentDep" table="`QUO_TERMPAYMENT_DEP`">
+		<id name="Id" access="property" column="`TPD_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    <property name="TpdDept" type="String" column="`TPD_DEPT`" length="22" />
+    <property name="TpdPersent" type="Double" column="`TPD_PERSENT`" length="22" />
+		<property name="TpdTotal" type="Double" column="`TPD_TOTAL`" length="22" />
+		<property name="TpdComment" type="String" column="`TPD_COMMENT`" length="255" />
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+    <many-to-one name="QuoTermpayment" class="QuoTermpayment" column="`TER_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

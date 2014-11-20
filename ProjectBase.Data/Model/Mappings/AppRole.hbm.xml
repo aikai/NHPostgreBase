@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AppRole" table="`APP_ROLE`">
+		<id name="Id" access="property" column="`ROLE_ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+
+    <property name="EnglishName" type="String" column="`ROLE_ENNAME`" length="100" />
+    <property name="ThaiName" type="String" column="`ROLE_THNAME`" length="100" />
+
+    <set name="AppControls" inverse="true" cascade="all">
+      <key column="`ROLE_ID`" />
+      <one-to-many class="AppControl" />
+    </set>
+    
+    <set name="AppRoleInMenus" inverse="true" cascade="all">
+      <key column="`ROLE_ID`" />
+      <one-to-many class="AppRoleInMenu" />
+    </set>
+
+    <many-to-one name="AppProject" class="AppProject" column="`APP_ID`" not-null="true" fetch="select" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="HrmEmployee" table="`HRM_EMPLOYEE`">
+		<id name="Id" access="property" column="`EMP_ID`" length="15">
+			<generator class="assigned" />
+		</id>
+		<property name="AddTimeManual" type="String" column="`ADD_TIME_MANUAL`" length="2" />
+		<property name="DeptId" type="Double" column="`DEPT_ID`" length="22" />
+		<property name="DeptOrg" type="String" column="`DEPT_ORG`" length="20" />
+		<property name="EmpAddress" type="String" column="`EMP_ADDRESS`" length="50" />
+		<property name="EmpAddress1" type="String" column="`EMP_ADDRESS1`" length="50" />
+		<property name="EmpAmp" type="String" column="`EMP_AMP`" length="4" />
+		<property name="EmpAmp1" type="String" column="`EMP_AMP1`" length="4" />
+		<property name="EmpBegindate" type="DateTime" column="`EMP_BEGINDATE`" length="7" />
+		<property name="EmpBorndate" type="DateTime" column="`EMP_BORNDATE`" length="7" />
+		<property name="EmpBornlocation" type="String" column="`EMP_BORNLOCATION`" length="255" />
+		<property name="EmpBoss" type="String" column="`EMP_BOSS`" length="15" />
+		<property name="EmpChild" type="Double" column="`EMP_CHILD`" length="22" />
+		<property name="EmpCityId" type="String" column="`EMP_CITY_ID`" length="13" />
+		<property name="EmpCv" type="BinaryBlob" column="`EMP_CV`" length="4000" />
+		<property name="EmpCvExten" type="String" column="`EMP_CV_EXTEN`" length="120" />
+		<property name="EmpDel" type="String" column="`EMP_DEL`" length="2" />
+		<property name="EmpDriveEnd" type="DateTime" column="`EMP_DRIVE_END`" length="7" />
+		<property name="EmpDriveLicence" type="String" column="`EMP_DRIVE_LICENCE`" length="15" />
+		<property name="EmpDriveType" type="String" column="`EMP_DRIVE_TYPE`" length="1" />
+		<property name="EmpEmail" type="String" column="`EMP_EMAIL`" length="100" />
+		<property name="EmpEndcontact" type="DateTime" column="`EMP_ENDCONTACT`" length="7" />
+		<property name="EmpEnddate" type="DateTime" column="`EMP_ENDDATE`" length="7" />
+		<property name="EmpEngname" type="String" column="`EMP_ENGNAME`" length="255" />
+		<property name="EmpHigh" column="`EMP_HIGH`" length="22" />
+		<property name="EmpHospital" type="String" column="`EMP_HOSPITAL`" length="50" />
+		<property name="EmpInten" type="String" column="`EMP_INTEN`" length="30" />
+		<property name="EmpLangr0" type="Double" column="`EMP_LANGR0`" length="22" />
+		<property name="EmpLangr1" type="Double" column="`EMP_LANGR1`" length="22" />
+		<property name="EmpLangr2" type="Double" column="`EMP_LANGR2`" length="22" />
+		<property name="EmpLangt0" type="Double" column="`EMP_LANGT0`" length="22" />
+		<property name="EmpLangt1" type="Double" column="`EMP_LANGT1`" length="22" />
+		<property name="EmpLangt2" type="Double" column="`EMP_LANGT2`" length="22" />
+		<property name="EmpLangw0" type="Double" column="`EMP_LANGW0`" length="22" />
+		<property name="EmpLangw1" type="Double" column="`EMP_LANGW1`" length="22" />
+		<property name="EmpLangw2" type="Double" column="`EMP_LANGW2`" length="22" />
+		<property name="EmpMarry" type="String" column="`EMP_MARRY`" length="1" />
+		<property name="EmpMobile" type="String" column="`EMP_MOBILE`" length="50" />
+		<property name="EmpNationality" type="String" column="`EMP_NATIONALITY`" length="15" />
+		<property name="EmpNick" type="String" column="`EMP_NICK`" length="50" />
+		<property name="EmpPassword" type="String" column="`EMP_PASSWORD`" length="15" />
+		<property name="EmpPic" type="BinaryBlob" column="`EMP_PIC`" length="4000" />
+		<property name="EmpPicFlag" type="String" column="`EMP_PIC_FLAG`" length="1" />
+		<property name="EmpPlace" type="String" column="`EMP_PLACE`" length="60" />
+		<property name="EmpProv" type="String" column="`EMP_PROV`" length="2" />
+		<property name="EmpProv1" type="String" column="`EMP_PROV1`" length="2" />
+		<property name="EmpReligion" type="String" column="`EMP_RELIGION`" length="15" />
+		<property name="EmpRoad" type="String" column="`EMP_ROAD`" length="50" />
+		<property name="EmpRoad1" type="String" column="`EMP_ROAD1`" length="50" />
+		<property name="EmpSex" type="String" column="`EMP_SEX`" length="1" />
+		<property name="EmpSkill" type="String" column="`EMP_SKILL`" length="50" />
+		<property name="EmpSlr" type="String" column="`EMP_SLR`" length="30" />
+		<property name="EmpSociePlace" type="String" column="`EMP_SOCIE_PLACE`" length="255" />
+		<property name="EmpSocietyId" type="String" column="`EMP_SOCIETY_ID`" length="20" />
+		<property name="EmpSoi" type="String" column="`EMP_SOI`" length="50" />
+		<property name="EmpSoi1" type="String" column="`EMP_SOI1`" length="50" />
+		<property name="EmpSoilders0" type="Double" column="`EMP_SOILDERS0`" length="22" />
+		<property name="EmpSoilders1" type="Double" column="`EMP_SOILDERS1`" length="22" />
+		<property name="EmpSoilders2" type="Double" column="`EMP_SOILDERS2`" length="22" />
+		<property name="EmpSoilders3" type="Double" column="`EMP_SOILDERS3`" length="22" />
+		<property name="EmpSoildersdetail" type="String" column="`EMP_SOILDERSDETAIL`" length="50" />
+		<property name="EmpStart" type="DateTime" column="`EMP_START`" length="7" />
+		<property name="EmpStatus" type="String" column="`EMP_STATUS`" length="1" />
+		<property name="EmpStudychild" type="Double" column="`EMP_STUDYCHILD`" length="22" />
+		<property name="EmpTableNo" type="String" column="`EMP_TABLE_NO`" length="50" />
+		<property name="EmpTam" type="String" column="`EMP_TAM`" length="6" />
+		<property name="EmpTam1" type="String" column="`EMP_TAM1`" length="6" />
+		<property name="EmpTelFax" type="String" column="`EMP_TEL_FAX`" length="50" />
+		<property name="EmpTelFax1" type="String" column="`EMP_TEL_FAX1`" length="50" />
+		<property name="EmpThainame" type="String" column="`EMP_THAINAME`" length="255" />
+		<property name="EmpWeight" column="`EMP_WEIGHT`" length="22" />
+
+    <!--<set name="AppControls" inverse="true" cascade="all">
+      <key column="`EMP_ID`" />
+      <one-to-many class="AppControl" />
+    </set>-->
+
+    
+    <!--<property name="PsId" type="Double" column="`PS_ID`" length="22" />-->
+    <many-to-one name="HrmPosition" class="HrmPosition" column="`PS_ID`" not-null="false" fetch="select" />
+
+    
+    <!--<many-to-one name="HrmSign" class="HrmSign" column="`SIGN_ID`" not-null="false" fetch="select" />-->
+    <!--<one-to-one name="HrmSign" class="HrmSign" property-ref="HrmSign" cascade="none" />-->
+    
+    <!--<set name="HrmSign" inverse="true" cascade="none">
+      <key column="`EMP_ID`" />
+      <one-to-many class="HrmSign" />
+    </set>-->
+    
+    <!--<many-to-one name="HrmSign" class="HrmSign" column="`SIGN_ID`" not-null="false" fetch="select" />-->
+    <one-to-one name="HrmSign" class="HrmSign" property-ref="HrmEmployee" cascade="none" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoReceive" table="`QUO_RECEIVE`">
+    
+		<id name="Id" access="property" column="`RECEIVE_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<property name="Receive" type="String" column="`RECEIVE`" length="255" />
+    <property name="ReceiveBy" type="String" column="`RECEIVE_BY`" length="10" />
+    <property name="ReceiveDate" type="DateTime" column="`RECEIVE_DATE`" length="7" />
+
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+    
+	</class>
+</hibernate-mapping>

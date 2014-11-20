@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoRetention" table="`QUO_RETENTION`">
+    
+		<id name="Id" access="property" column="`QUO_RET`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+    <property name="Type" column="`RET_TYPE`"
+              type="NHibernate.Type.EnumStringType`1[[ProjectBase.Core.Model.RetentionType, ProjectBase.Core]], NHibernate" />
+    
+		<property name="Description" type="String" column="`DESCRIPTION`" length="255" />
+    <property name="Money" type="Double" column="`MONEY`" length="22" />
+    <property name="Remark" type="String" column="`REMARK`" length="255" />
+    
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+    <property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+    <property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

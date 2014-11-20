@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimCaution" table="`LIM_CAUTION`" schema="`public`">
+		<id name="Id" access="property" column="`CAU_ID`">
+      <generator class="guid.comb" />
+		</id>
+		<property name="CauComment" type="String" column="`CAU_COMMENT`" length="255" />
+		<property name="CauEname" type="String" column="`CAU_ENAME`" length="255" />
+		<property name="CauTname" type="String" column="`CAU_TNAME`" length="255" />
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" />
+	</class>
+</hibernate-mapping>

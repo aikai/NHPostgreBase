@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoTermpayment" table="`QUO_TERMPAYMENT`">
+    
+		<id name="Id" access="property" column="`TER_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+    <property name="TerItem" type="String" column="`TER_ITEM`" length="22" />
+    <property name="TerCost" type="Double" column="`TER_COST`" length="22" />
+		<property name="TerRemark" type="String" column="`TER_REMARK`" length="255" />
+    <property name="TerSta" type="String" column="`TER_STA`" length="255" />
+    <property name="TerDescription" type="String" column="`TER_DESCRIPTION`" length="500" />
+    <property name="TerDueDate" type="DateTime" column="`TER_DUE_DATE`" length="7" />
+    <property name="FinalDate" type="DateTime" column="`FINAL_DATE`" length="7" />
+    <property name="FinalComment" type="String" column="`FINAL_COMMENT`" length="500" />
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+    <property name="InvoiceNo" type="String" column="`INV_NO`" length="100" />
+		<property name="InvoiceDate" type="DateTime" column="`INV_DATE`" length="7" />
+    <property name="CancelAllDate" type="DateTime" column="`TERM_CANCEL_DATE`" length="7" />
+    <property name="CancelStatus" type="String" column="`TERM_CANCEL_ALL`" length="1" />
+    
+    <set name="QuoTermpaymentDeps" inverse="true" cascade="all">
+      <key column="`TER_ID`" />
+      <one-to-many class="QuoTermpaymentDep" />
+    </set>
+
+    <set name="QuoTermRelates" inverse="true" cascade="all">
+      <key column="`TER_ID`" />
+      <one-to-many class="QuoTermRelate" />
+    </set>
+    
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />    
+    <one-to-one name="QuoTermSta" class="QuoTermSta" property-ref="QuoTermpayment" cascade="all" />
+    <!--<one-to-one name="GenDocNo" class="GenDocNo" property-ref="QuoTermpayment" cascade="none" />-->
+    <one-to-one name="QuoTermInv" class="QuoTermInv" property-ref="QuoTermpayment" cascade="none" />
+    
+	</class>
+</hibernate-mapping>

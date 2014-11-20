@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusDueType" table="`CUS_DUE_TYPE`">
+		<id name="Id" access="property" column="`DTY_ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+		<property name="DtyDescrip" type="String" column="`DTY_DESCRIP`" length="1000" />
+		<property name="DtyRemark" type="String" column="`DTY_REMARK`" length="500" />
+    
+    <!--<one-to-one name="CusDue" class="CusDue" property-ref="CusDueType" cascade="all" />-->
+	</class>
+</hibernate-mapping>

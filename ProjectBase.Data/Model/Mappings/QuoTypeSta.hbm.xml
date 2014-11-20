@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoTypeSta" table="`QUO_TYPE_STA`">
+    
+		<id name="Id" access="property" column="`TST_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<property name="Name" type="String" column="`TST_NAME`" length="255" />
+    <property name="Description" type="String" column="`TST_DESCRIPTION`" length="255" />
+    <property name="Group" type="String" column="`TST_GROUP`" length="255" />
+    <property name="Index" type="Int32" column="`TST_INDX`" length="22" />
+    
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+    <property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+    <property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusMaster" table="`CUS_MASTER`">
+		<id name="Id" access="property" column="`CUS_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="CusCode" type="String" column="`CUS_CODE`" length="20" />
+		<property name="CusComment" type="String" column="`CUS_COMMENT`" length="250" />
+		<property name="CusCredit" type="Double" column="`CUS_CREDIT`" length="22" />
+		<property name="CusCreditDetail" type="String" column="`CUS_CREDIT_DETAIL`" length="250" />
+		<property name="CusEmail" type="String" column="`CUS_EMAIL`" length="50" />
+		<property name="CusEname" type="String" column="`CUS_ENAME`" length="1000" />
+		<property name="CusEroad" type="String" column="`CUS_EROAD`" length="60" />
+		<property name="CusEtel" type="String" column="`CUS_ETEL`" length="1000" />
+		<property name="CusFax" type="String" column="`CUS_FAX`" length="50" />
+		<property name="CusTel" type="String" column="`CUS_TEL`" length="50" />
+		<property name="CusTname" type="String" column="`CUS_TNAME`" length="1000" />
+		<property name="CusTroad" type="String" column="`CUS_TROAD`" length="60" />
+		<property name="CusTtel" type="String" column="`CUS_TTEL`" length="1000" />
+		<property name="CusWww" type="String" column="`CUS_WWW`" length="200" />
+		
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+    
+		<set name="CusAdds" inverse="true" cascade="all">
+			<key column="`CUS_ID`" />
+			<one-to-many class="CusAdd" />
+		</set>
+    
+		<set name="CusCons" inverse="true" cascade="all">
+			<key column="`CUS_ID`" />
+			<one-to-many class="CusCon" />
+		</set>
+    
+    <set name="CusDues" inverse="true" cascade="all">
+      <key column="`CUS_ID`" />
+      <one-to-many class="CusDue" />
+    </set>
+    
+		<many-to-one name="CusType" class="CusType" column="`CTP_ID`" not-null="false" fetch="select" />
+    <many-to-one name="CusBustype" class="CusBustype" column="`BTP_ID`" not-null="false" fetch="select" />
+    <many-to-one name="CusBusgroup" class="CusBusgroup" column="`BGR_ID`" not-null="false" fetch="select" />
+
+    <component name="AddressShort" class="ProjectBase.Data.Model.AddressShort" >
+      <property name="ThaiAddress" type="String" column="`CUS_TADDRESS`" length="150" />
+      <property name="EngAddress" type="String" column="`CUS_EADDRESS`" length="150" />
+
+      <many-to-one name="Tambol" class="Tambol" column="`TAM_ID`" not-null="false" fetch="select" />
+      <many-to-one name="Amphoe" class="Amphoe" column="`AMP_ID`" not-null="false" fetch="select" />
+      <many-to-one name="Province" class="Province" column="`PROV_ID`" not-null="false"  fetch="select"/>      
+
+      <!--<property name="CusZipcode" type="String" column="`CUS_ZIPCODE`" length="5" />-->
+      <component name="PostCode" class="ProjectBase.Utils.Components.PostCode, ProjectBase.Utils" >
+        <property name="Value" column="`CUS_ZIPCODE`" type="string" />
+      </component>
+    </component>
+
+    <property name="CusIndex" type="int" column="`CUS_INDX`"/>
+	</class>
+</hibernate-mapping>

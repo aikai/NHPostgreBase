@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoRequest" table="`QUO_REQUEST`">
+    
+		<id name="Id" access="property" column="`REQ_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+    <!--<property name="ReqPerson" type="String" column="`REQ_PERSON`" length="10" />-->
+    <property name="ReqPerson" type="System.Boolean" column="`REQ_PERSON`" length="1" />
+		<property name="ReqPersonDe" type="String" column="`REQ_PERSON_DE`" length="500" />  
+    
+    <!--<property name="ReqTool" type="String" column="`REQ_TOOL`" length="10" />-->
+    <property name="ReqTool" type="System.Boolean" column="`REQ_TOOL`" length="1" />
+    <property name="ReqToolDe" type="String" column="`REQ_TOOL_DE`" length="500" />
+    
+    <!--<property name="ReqChemical" type="String" column="`REQ_CHEMICAL`" length="10" />-->
+    <property name="ReqChemical" type="System.Boolean" column="`REQ_CHEMICAL`" length="1" />
+    <property name="ReqChemicalDe" type="String" column="`REQ_CHEMICAL_DE`" length="500" />
+    
+    <!--<property name="ReqGlass" type="String" column="`REQ_GLASS`" length="10" />-->
+    <property name="ReqGlass" type="System.Boolean" column="`REQ_GLASS`" length="1" />
+    <property name="ReqGlassDe" type="String" column="`REQ_GLASS_DE`" length="500" />
+    
+    <!--<property name="ReqJob" type="String" column="`REQ_JOB`" length="10" />-->
+    <property name="ReqJob" type="System.Boolean" column="`REQ_JOB`" length="1" />
+    <property name="ReqComment" type="String" column="`REQ_COMMENT`" length="500" />
+    
+    <property name="ReqBy" type="String" column="`REQ_BY`" length="10" />
+    <property name="ReqDate" type="DateTime" column="`REQ_DATE`" length="7" />
+    <property name="IsDelete" type="System.Boolean" column="`IS_DELETE`" length="1" />
+
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+    <property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+    <property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+    
+	</class>
+</hibernate-mapping>

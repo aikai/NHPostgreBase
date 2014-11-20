@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AppProject" table="`APP_PROJECT`">
+		<id name="Id" access="property" column="`APP_ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+		<property name="AppName" type="String" column="`APP_NAME`" length="100" />
+    
+    <set name="AppControls" inverse="true" cascade="all">
+      <key column="`CONTROL_ID`" />
+      <one-to-many class="AppControl" />
+    </set>
+    <set name="AppRoles" inverse="true" cascade="all">
+      <key column="`APP_ID`" />
+      <one-to-many class="AppRole" />
+    </set>
+    
+	</class>
+</hibernate-mapping>

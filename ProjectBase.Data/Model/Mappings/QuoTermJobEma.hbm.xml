@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoTermJobEma" table="`QUO_TERM_JOBE`">
+		<id name="Id" access="property" column="`TJE_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<property name="TjeRepnum" type="String" column="`TJE_REPNUM`" length="100" />
+		<property name="TjeDescription" type="String" column="`TJE_DESCRIPTION`" length="255" />
+    
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <set name="QuoTermJobEmaDes" inverse="true" cascade="all">
+      <key column="`TJE_ID`" />
+      <one-to-many class="QuoTermJobEmaDe" />
+    </set>
+    
+    <many-to-one name="QuoTermpayment" class="QuoTermpayment" column="`TER_ID`" not-null="false" fetch="select" />
+  
+	</class>
+</hibernate-mapping>

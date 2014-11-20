@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Unit" table="`UNIT`">
+		<id name="Id" access="property" column="`ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+		<property name="UnitName" type="String" column="`UNIT_NAME`" length="50" />
+	</class>
+</hibernate-mapping>

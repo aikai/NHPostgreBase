@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoTermJobEmaFiles" table="`QUO_TERM_JOBEMAFILE`">
+		<id name="Id" access="property" column="`FI_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<property name="AttachDatetime" type="DateTime" column="`ATTACH_DATETIME`" length="7" />
+		<property name="ContentType" type="String" column="`CONTENT_TYPE`" length="100" />
+		<property name="FileData" type="BinaryBlob" column="`FILE_DATA`" length="4000" />
+		<property name="FileName" type="String" column="`FI_NAME`" length="100" />
+    <property name="FileDescription" type="String" column="`FI_DESCRIPTION`" length="500" />
+		<property name="FileSize" type="Double" column="`FI_SIZE`" length="22" />
+    <property name="Index" type="Int32" column="`FI_INDEX`" length="22" />
+
+    <property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+    <property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <many-to-one name="QuoTermpayment" class="QuoTermpayment" column="`TER_ID`" not-null="false" fetch="select" />
+    
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Tambol" table="`TAMBOL`">
+		<id name="Id" access="property" column="`TAM_ID`" length="6">
+			<generator class="assigned" />
+		</id>
+		<property name="TamEname" type="String" column="`TAM_ENAME`" length="100" />
+		<property name="TamTname" type="String" column="`TAM_TNAME`" length="100" />
+		<property name="TamZip" type="String" column="`TAM_ZIP`" length="5" />
+		<many-to-one name="Amphoe" class="Amphoe" column="`AMP_ID`" not-null="true" fetch="select" />
+	</class>
+</hibernate-mapping>

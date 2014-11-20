@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimSamMasterWa" table="`LIM_SAM_MASTER_WA`" schema="`public`">
+		<id name="Id" access="property" column="`SAM_ID`">
+      <generator class="guid.comb" />
+		</id>
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" />
+		<property name="SamComment" type="String" column="`SAM_COMMENT`" length="200" />
+		<property name="SamEmp" type="String" column="`SAM_EMP`" length="15" />
+		<property name="SamLocation" type="String" column="`SAM_LOCATION`" length="2000" />
+		<property name="SamNumber" type="String" column="`SAM_NUMBER`" />
+		<property name="SamPo" type="String" column="`SAM_PO`" length="100" />
+		<property name="SamQuo" type="String" column="`SAM_QUO`" length="100" />
+		<property name="SamRecDate" type="DateTime" column="`SAM_REC_DATE`" />
+		<property name="SamRecTime" type="String" column="`SAM_REC_TIME`" length="5" />
+		<property name="SamSampling" type="String" column="`SAM_SAMPLING`" length="100" />
+		<property name="SamWitness" type="String" column="`SAM_WITNESS`" length="15" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" />
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+		<set name="LimSamDetailWas" inverse="true">
+			<key column="`SAM_ID`" />
+			<one-to-many class="LimSamDetailWa" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97C50A41-04A0-4424-BDA6-5AA630CFFD11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectBase.Core</RootNamespace>
+    <AssemblyName>ProjectBase.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\References\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\IAppProjectDao.cs" />
+    <Compile Include="Dao\IAppPermitDao.cs" />
+    <Compile Include="Dao\IAppMenuDao.cs" />
+    <Compile Include="Dao\ICusMasterDao.cs" />
+    <Compile Include="Dao\IQuoTermJobEmaFilesDao.cs" />
+    <Compile Include="Dao\IQuoGenDao.cs" />
+    <Compile Include="Dao\IQuoMasterDao.cs" />
+    <Compile Include="Dao\IQuoTermJobEmaDao.cs" />
+    <Compile Include="Dao\IHrmEmployeeDao.cs" />
+    <Compile Include="Dao\IAppRoleDao.cs" />
+    <Compile Include="Dao\IQuoTermJobLabDao.cs" />
+    <Compile Include="Dao\IQuoTermJobEsmFileDao.cs" />
+    <Compile Include="Dao\IAppRoleInMenuDao.cs" />
+    <Compile Include="Dao\IUaeProjectManageDao.cs" />
+    <Compile Include="Dao\IQuoTermRelateDao.cs" />
+    <Compile Include="Dao\IQuoTypeStaDao.cs" />
+    <Compile Include="Dao\IQuoTermStaDao.cs" />
+    <Compile Include="Dao\IQuoCoWorkerDao.cs" />
+    <Compile Include="Dao\IQuoRequestDao.cs" />
+    <Compile Include="Dao\IQuoTermpaymentDao.cs" />
+    <Compile Include="Dao\IQuoTermdepDao.cs" />
+    <Compile Include="Dao\IAppControlDao.cs" />
+    <Compile Include="Dao\IHrmSignDao.cs" />
+    <Compile Include="Dao\IQuoCombineDao.cs" />
+    <Compile Include="Dao\IQuoWorkerDao.cs" />
+    <Compile Include="Dao\IQuoTermInvDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Components\RetentionType.cs" />
+    <Compile Include="Model\Components\QuoFileType.cs" />
+    <Compile Include="Model\Components\IAddressShort.cs" />
+    <Compile Include="Model\Components\IAddress.cs" />
+    <Compile Include="Model\Entities\IQuoTermInv.cs" />
+    <Compile Include="Model\Entities\ILimGen.cs" />
+    <Compile Include="Model\Entities\ILimSamplingLocate.cs" />
+    <Compile Include="Model\Entities\IQuoTermRelate.cs" />
+    <Compile Include="Model\Entities\IQuoCombine.cs" />
+    <Compile Include="Model\Entities\IQuoCombineDe.cs" />
+    <Compile Include="Model\Entities\IQuoCombineFile.cs" />
+    <Compile Include="Model\Entities\ILimCaution.cs" />
+    <Compile Include="Model\Entities\ILimParamWa.cs" />
+    <Compile Include="Model\Entities\ILimParamGroupWa.cs" />
+    <Compile Include="Model\Entities\ILimSamDetailWa.cs" />
+    <Compile Include="Model\Entities\ILimSamMasterWa.cs" />
+    <Compile Include="Model\Entities\ILimSamPreserv.cs" />
+    <Compile Include="Model\Entities\ILimSamSubdetailWa.cs" />
+    <Compile Include="Model\Entities\ILimSourceWa.cs" />
+    <Compile Include="Model\Entities\IQuoTermJobEmaFiles.cs" />
+    <Compile Include="Model\Entities\IQuoRetention.cs" />
+    <Compile Include="Model\Entities\IQuoCoWorker.cs" />
+    <Compile Include="Model\Entities\IQuoTermJobEmaFile.cs" />
+    <Compile Include="Model\Entities\IQuoTermJobEsmFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\IQuoTermJobLabFile.cs" />
+    <Compile Include="Model\Entities\IQuoTermJobEmaDe.cs" />
+    <Compile Include="Model\Entities\IQuoTermJobEma.cs" />
+    <Compile Include="Model\Entities\IQuoTermSta.cs" />
+    <Compile Include="Model\Entities\IQuoTypeSta.cs" />
+    <Compile Include="Model\Entities\IQuoTermJobLabDe.cs" />
+    <Compile Include="Model\Entities\IQuoTermJobLab.cs" />
+    <Compile Include="Model\Entities\IQuoRequest.cs" />
+    <Compile Include="Model\Entities\IQuoReceive.cs" />
+    <Compile Include="Model\Entities\IQuoPoCode.cs" />
+    <Compile Include="Model\Entities\IHrmEmail.cs" />
+    <Compile Include="Model\Entities\IQuoRemarkLog.cs" />
+    <Compile Include="Model\Entities\IQuoTermpaymentDep.cs" />
+    <Compile Include="Model\Entities\IQuoTermpayment.cs" />
+    <Compile Include="Model\Entities\IQuoInCusCon.cs" />
+    <Compile Include="Model\Entities\IQuoFile.cs" />
+    <Compile Include="Model\Entities\IHrmSign.cs" />
+    <Compile Include="Model\Entities\IHrmPosition.cs" />
+    <Compile Include="Model\Entities\IAppControlDetail.cs" />
+    <Compile Include="Model\Entities\IAppRoleInMenu.cs" />
+    <Compile Include="Model\Entities\IAppControl.cs" />
+    <Compile Include="Model\Entities\IAppMenu.cs" />
+    <Compile Include="Model\Entities\IAppPermit.cs" />
+    <Compile Include="Model\Entities\IAppProject.cs" />
+    <Compile Include="Model\Entities\IAppRole.cs" />
+    <Compile Include="Model\Entities\ICusAddtype.cs" />
+    <Compile Include="Model\Entities\ICusDueType.cs" />
+    <Compile Include="Model\Entities\IAmphoe.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\ICusAdd.cs" />
+    <Compile Include="Model\Entities\ICusBusgroup.cs" />
+    <Compile Include="Model\Entities\ICusBustype.cs" />
+    <Compile Include="Model\Entities\ICusCon.cs" />
+    <Compile Include="Model\Entities\ICusDue.cs" />
+    <Compile Include="Model\Entities\ICusMaster.cs" />
+    <Compile Include="Model\Entities\ICusType.cs" />
+    <Compile Include="Model\Entities\IDepartment.cs" />
+    <Compile Include="Model\Entities\IHrmEmployee.cs" />
+    <Compile Include="Model\Entities\IProvince.cs" />
+    <Compile Include="Model\Entities\IQuoApprove.cs" />
+    <Compile Include="Model\Entities\IQuoDetail.cs" />
+    <Compile Include="Model\Entities\IQuoGen.cs" />
+    <Compile Include="Model\Entities\IQuoMaster.cs" />
+    <Compile Include="Model\Entities\IQuoTermdep.cs" />
+    <Compile Include="Model\Entities\IQuoWorker.cs" />
+    <Compile Include="Model\Entities\ITambol.cs" />
+    <Compile Include="Model\Entities\IUaeProjectManage.cs" />
+    <Compile Include="Model\Entities\IUnit.cs" />
+    <Compile Include="Factories\IDaoFactory.cs" />
+    <Compile Include="Factories\IEntityFactory.cs" />
+    <Compile Include="IDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectBase.Utils\ProjectBase.Utils.csproj">
+      <Project>{2A3F4532-1692-4871-8840-9717C97B2D4F}</Project>
+      <Name>ProjectBase.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

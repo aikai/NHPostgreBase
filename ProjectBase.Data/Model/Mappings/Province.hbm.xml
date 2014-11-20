@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Province" table="`PROVINCE`" >
+		<id name="Id" access="property" column="`PROV_ID`" length="2">
+			<generator class="assigned" />
+		</id>
+		<property name="ProvEname" type="String" column="`PROV_ENAME`" length="100" />
+		<property name="ProvSign" type="String" column="`PROV_SIGN`" length="20" />
+		<property name="ProvTname" type="String" column="`PROV_TNAME`" length="100" />
+		<property name="RegId" type="String" column="`REG_ID`" length="1" />
+	</class>
+</hibernate-mapping>

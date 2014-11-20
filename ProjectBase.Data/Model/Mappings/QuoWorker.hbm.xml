@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoWorker" table="`QUO_WORKER`">
+		<id name="Id" access="property" column="`ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="Dept" type="String" column="`DEPT`" length="15" />
+		<!--<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />-->
+		
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+    <many-to-one name="Employee" class="HrmEmployee" column="`EMP_ID`" not-null="false" fetch="select" />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoApprove" table="`QUO_APPROVE`">
+		<id name="Id" access="property" column="`APV_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="ApvComment" type="String" column="`APV_COMMENT`" length="255" />
+		<property name="ApvSig" type="BinaryBlob" column="`APV_SIG`" length="4000" />
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="EmpId" type="Double" column="`EMP_ID`" length="22" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+	</class>
+</hibernate-mapping>

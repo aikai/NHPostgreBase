@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model.Entities" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="GenDocNo" table="`GEN_DOCNO`">
+    
+		<id name="Id" access="property" column="`GEN_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+    
+		<property name="Prefix" type="String" column="`GEN_PREFIX`" length="255" />
+    <property name="Year" type="Int32" column="`GEN_YEAR`" length="22" />
+    <property name="Month" type="Int32" column="`GEN_MONTH`" length="22" />
+    <property name="InctNum" type="Int32" column="`INCT_NUM`" length="22" />
+    <property name="DocNo" type="String" column="`DOC_NO`" length="255" />
+
+    <many-to-one name="QuoTermpayment" class="QuoTermpayment" column="`TER_ID`" not-null="false" fetch="select" />
+
+	</class>
+</hibernate-mapping>

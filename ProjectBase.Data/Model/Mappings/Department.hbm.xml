@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Department" table="`DEPARTMENT`">
+		<id name="Id" access="property" column="`DEPT_ID`" length="5">
+			<generator class="assigned" />
+		</id>
+		<property name="DeptEname" type="String" column="`DEPT_ENAME`" length="60" />
+		<property name="DeptName" type="String" column="`DEPT_NAME`" length="60" />
+	</class>
+</hibernate-mapping>

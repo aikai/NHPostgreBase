@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusAddtype" table="`CUS_ADDTYPE`">
+		<id name="Id" access="property" column="`CAD_ID`" length="16">
+      <generator class="guid.comb" />
+		</id>
+    
+		<property name="CadComment" type="String" column="`CAD_COMMENT`" length="250" />
+		<property name="CadName" type="String" column="`CAD_NAME`" length="150" />
+
+    <!--<one-to-one name="CusAdd" class="CusAdd" property-ref="CusAddtype" cascade="all" />-->
+	</class>
+</hibernate-mapping>

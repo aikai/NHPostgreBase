@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CusBustype" table="`CUS_BUSTYPE`">
+		<id name="Id" access="property" column="`BTP_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="BtpRemark" type="String" column="`BTP_REMARK`" length="200" />
+		<property name="BtpTname" type="String" column="`BTP_TNAME`" length="200" />
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+		<set name="CusMasters" inverse="true" cascade="all">
+			<key column="`BTP_ID`" />
+			<one-to-many class="CusMaster" />
+		</set>
+    <many-to-one name="CusBusgroup" class="CusBusgroup" column="`BGR_ID`" not-null="false" fetch="select" />
+	</class>
+</hibernate-mapping>

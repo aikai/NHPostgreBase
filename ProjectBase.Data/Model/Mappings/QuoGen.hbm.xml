@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="QuoGen" table="`QUO_GEN`">
+		<id name="Id" access="property" column="`GEN_ID`" length="16">
+			<generator class="guid.comb" />
+		</id>
+		<property name="CreateBy" type="String" column="`CREATE_BY`" length="10" />
+		<property name="CreateDate" type="DateTime" column="`CREATE_DATE`" length="7" />
+		<property name="GenCode" type="Double" column="`GEN_CODE`" length="22" />
+    <property name="GenRevise" type="Double" column="`GEN_REVISE`" length="22" />
+		<property name="GenDate" type="DateTime" column="`GEN_DATE`" length="7" />
+		<property name="GenDep" type="String" column="`GEN_DEP`" length="50" />
+		<property name="GenYear" type="Double" column="`GEN_YEAR`" length="22" />
+		<property name="UpdateBy" type="String" column="`UPDATE_BY`" length="10" />
+		<property name="UpdateDate" type="DateTime" column="`UPDATE_DATE`" length="7" />
+
+    <property name="ProjName" type="String" column="`PROJ_NAME`" length="1000" />
+    <property name="EstCost" type="Double" column="`EST_COST`" length="1000" />
+    <property name="Status" type="String" column="`STATUS`" length="1000" />
+    
+    <many-to-one name="QuoMaster" class="QuoMaster" column="`QUO_ID`" not-null="false" fetch="select" />
+    
+	</class>
+</hibernate-mapping>

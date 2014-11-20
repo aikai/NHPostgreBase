@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="ProjectBase.Data.Model" assembly="ProjectBase.Data" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LimSamPreserv" table="`LIM_SAM_PRESERV`" schema="`public`">
+		<id name="Id" access="property" column="`SPS_ID`">
+      <generator class="guid.comb" />
+		</id>
+		<property name="SpsComment" type="String" column="`SPS_COMMENT`" length="255" />
+		<property name="SpsEname" type="String" column="`SPS_ENAME`" length="255" />
+		<property name="SpsTname" type="String" column="`SPS_TNAME`" length="255" />
+		<set name="LimSamSubdetailWas" inverse="true">
+			<key column="`SPS_ID`" />
+			<one-to-many class="LimSamSubdetailWa" />
+		</set>
+	</class>
+</hibernate-mapping>
