@@ -305,7 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectBase.Core\ProjectBase.Core.csproj">
-      <Project>{97C50A41-04A0-4424-BDA6-5AA630CFFD11}</Project>
+      <Project>{97c50a41-04a0-4424-bda6-5aa630cffd11}</Project>
       <Name>ProjectBase.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\ProjectBase.Utils\ProjectBase.Utils.csproj">

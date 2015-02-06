@@ -72,10 +72,12 @@
     <Compile Include="Dao\IQuoTermInvDao.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Components\RetentionType.cs" />
     <Compile Include="Model\Components\QuoFileType.cs" />
     <Compile Include="Model\Components\IAddressShort.cs" />
     <Compile Include="Model\Components\IAddress.cs" />
+    <Compile Include="Model\Components\RetentionType.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Model\Entities\IQuoTermInv.cs" />
     <Compile Include="Model\Entities\ILimGen.cs" />
     <Compile Include="Model\Entities\ILimSamplingLocate.cs" />
